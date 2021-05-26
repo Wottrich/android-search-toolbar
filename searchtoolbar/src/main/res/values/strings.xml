@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_toolbar_description_search">Pesquisar</string>
+    <string name="search_toolbar_description_back">Voltar</string>
+    <string name="search_toolbar_description_search_button">Botão pesquisar</string>
+    <string name="search_toolbar_stop_search">Parar de pesquisar</string>
+    <string name="search_toolbar_clear_text">Limpar texto escrito na pesquisa</string>
+</resources>
