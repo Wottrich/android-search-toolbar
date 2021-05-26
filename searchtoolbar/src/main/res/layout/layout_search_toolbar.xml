@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@android:color/transparent"
+    android:elevation="0dp"
+    app:elevation="0dp"
+    tools:viewBindingIgnore="true">
+
+    <wottrich.github.io.searchtoolbar.SearchToolbar
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:id="@+id/searchToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/search_margin"
+        android:background="@drawable/shape_search"
+        android:contentInsetStart="0dp"
+        android:contentInsetEnd="0dp"
+        android:elevation="1dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:elevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/collapsedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/search_toolbar_description_search"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/collapsedBackButton"
+                android:layout_width="48dp"
+                android:layout_height="0dp"
+                android:background="?android:attr/actionBarItemBackground"
+                android:contentDescription="@string/search_toolbar_description_back"
+                android:src="@drawable/ic_arrow_back_round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/collapsedHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/actionContainerLinearLayout"
+                app:layout_constraintStart_toEndOf="@id/collapsedBackButton"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Search your things" />
+
+<!--     android:textAppearance="@style/P5"       -->
+
+            <LinearLayout
+                android:id="@+id/actionContainerLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/collapsedSearchButton"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:contentDescription="@string/search_toolbar_description_search_button"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/collapsedResetSearch"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:contentDescription="@string/search_toolbar_description_search_button"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_close_round"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/expandedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?colorPrimary"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageButton
+                android:id="@+id/expandedBackButton"
+                android:layout_width="48dp"
+                android:layout_height="0dp"
+                android:background="?android:attr/actionBarItemBackground"
+                android:contentDescription="@string/search_toolbar_stop_search"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_back_round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/expandedInputSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="attr?android:attr/textPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/expandedClearTextButton"
+                app:layout_constraintStart_toEndOf="@id/expandedBackButton"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="LabelFor" />
+
+<!--     android:textAppearance="@style/P5"       -->
+
+            <ImageButton
+                android:id="@+id/expandedClearTextButton"
+                android:layout_width="48dp"
+                android:layout_height="0dp"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/actionBarItemBackground"
+                android:contentDescription="@string/search_toolbar_clear_text"
+                android:scaleType="center"
+                android:src="@drawable/ic_close_round"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </wottrich.github.io.searchtoolbar.SearchToolbar>
+
+</com.google.android.material.appbar.AppBarLayout>
