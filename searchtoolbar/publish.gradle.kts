@@ -5,7 +5,7 @@ apply(plugin = "maven-publish")
 
 fun hasActionUserId() = !System.getenv(EnvKeys.actionUserID).isNullOrEmpty()
 fun hasActionUserPat() = !System.getenv(EnvKeys.actionUserPAT).isNullOrEmpty()
-val hasPublishCredentials = hasActionUserId() && hasActionUserPat()
+val hasPublishCredentials = true//hasActionUserId() && hasActionUserPat()
 
 val versionName = if (hasPublishCredentials) {
     val byteOutput = ByteArrayOutputStream()
@@ -18,7 +18,9 @@ val versionName = if (hasPublishCredentials) {
     "1.0.0-local"
 }
 
-val libraryVersionName = versionName.orEmpty()
+println(versionName)
+
+val libraryVersionName = null//versionName.orEmpty()
 
 configure<PublishingExtension> {
     publications {
